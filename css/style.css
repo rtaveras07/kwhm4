@@ -1,0 +1,89 @@
+body{
+    background-color: rgb(231, 231, 231);
+}
+
+.app{
+    background-color: rgb(255, 255, 255);
+    width:50%;
+    color: rgb(8, 8, 8);
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: content-box;
+    border-radius:20px;
+}
+button{
+    height:auto;
+    width:110px;
+    background:none;
+    color:#2870f5;
+    border:#2870f5 1px solid;
+    padding:5px;
+    transition-duration:0.1s;
+}
+
+button:hover{
+    background-color:#2870f5;
+    color:#ffffff;
+    border:#2870f5 1px solid;
+    padding:5px;
+    transition-duration:0.1s;
+}
+
+::placeholder {
+    color: #2870f5;
+    opacity:50%;
+}
+
+input[type="text"]{
+    background:none;
+    border:none;
+    border-bottom:1px #2870f5 solid;
+    font-size:20px;
+}
+
+input[type="text"]:focus-visible{
+    outline:none;
+    box-shadow: none;
+    color:#000000;
+}
+
+ul {
+    list-style: none;
+    list-style-position: outside;
+    margin: 0;
+    padding: 25px 0;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.metodo {
+    border:#2870f5 1px solid;
+    padding:5px;
+}
+
+.clean-show {
+    color:#2870f5;
+    opacity:30%;
+    font-size:25px;
+}
+.clean-hide {
+    color:#2870f5;
+    opacity:30%;
+    font-size:25px;
+    display:none;
+}
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  
