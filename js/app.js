@@ -187,7 +187,7 @@ function resultado() {
       ${Math.round(consumofinal2,2)} x ${precioRango2} = ${rango2} <br>
       ${consumofinal3} x ${precioRango3} = ${rango3} <br>
       ${consumofinal4} x ${precioRango4} =${rango4}<br>  
-      <b>Promedio consumo mes: ${formatterDolar.format((consumo)/30)}</b>  
+      <b>Promedio kh diario ${formatterDolar.format((consumo)/30)}</b>  
       <hr>
       <b>Total a Pagar : ${formatterDolar.format(total)}</b>   
      
