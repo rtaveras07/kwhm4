@@ -186,18 +186,21 @@ function resultado() {
     //desplegando el resultado 
     facturacion.innerHTML = '';
     facturacion.innerHTML += `<div>
-      Consumo 30 días: ${Math.round(consumo, 2)} <br>
-      Cargo fijo: ${cargofijo} <br>      
-      ${consumofinal1} x ${precioRango1} = ${rango1} <br>
-      ${Math.round(consumofinal2,2)} x ${precioRango2} = ${rango2} <br>
-      ${Math.round(consumofinal3,2)} x ${precioRango3} = ${rango3} <br>
-      ${Math.round(consumofinal4,2)} x ${precioRango4} =${rango4}<br>  
-      <b> ${Math.round((consumo/30),2)} kwh en promedio diario.  </b>   
-   
-      <b> ${fdiasTranscurridos()* (consumo/30)} Kwh consumidos en </b> 
-      <b> ${fdiasTranscurridos()} días transcurridos</b>    <br>
-      <hr>  
+      <b>Consumo estimado en 30 días:</b> ${Math.round(consumo, 2)} Kw mes <br>
+      <b>-------Escala de consumo-----</b>  <br>
+      Cargo fijo:    RD$ ${cargofijo} <br>      
+      ${consumofinal1} x ${precioRango1} = RD$ ${rango1} <br>
+      ${Math.round(consumofinal2,2)} x ${precioRango2} = RD$ ${rango2} <br>
+      ${Math.round(consumofinal3,2)} x ${precioRango3} = RD$ ${rango3} <br>
+      ${Math.round(consumofinal4,2)} x ${precioRango4} =RD$ ${rango4}<br>  
       <b>Total a Pagar : ${formatterDolar.format(total)}</b>   
+      <hr>  
+      <b> ${Math.round((consumo/30),2)} kwh en promedio diario,  </b>   
+   
+      <b> ${fdiasTranscurridos()* (consumo/30)} Kwh en </b> 
+      <b> ${fdiasTranscurridos()} días transcurridos.</b>    <br>
+
+   
      
       </div>`;
   } catch (error) {
