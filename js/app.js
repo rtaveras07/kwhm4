@@ -98,21 +98,12 @@ consumo=0;
  
      } else {         
       
-      var consumoAnterior = localStorage.getItem('kwh');
-      var fechaAnterior = localStorage.getItem('fecha');
-      let d = new Date();
-      //fecha actual del sistema
-      let fechaActual =d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate() ;  
-          
-      //diferencia de las fechas en dias 
-      fecha1 = new Date(fechaActual);
-      fecha2 = new Date(fechaAnterior);     
-    let diasTrnascurridos =    fecha1.getTime() -   fecha2.getTime(); 
-    diasTrnascurridos= (diasTrnascurridos/(1000*60*60*24) ); 
+      var consumoAnterior = localStorage.getItem('kwh');  
      //diferencia de consumo entre los dias transcurridos
-      consumo = kw - consumoAnterior; // para obtener la dierecncia por ej. 5490-5400=90     
-      consumo=consumo/diasTrnascurridos;// 90 dividido por los dias transcurridos entre las fechas
-      console.log('consumo = kw - consumoAnterior '+consumo);
+     
+     consumo = kw - consumoAnterior; // para obtener la dierecncia por ej. 5490-5400=90     
+      consumo=consumo/fdiasTranscurridos();// 90 dividido por los dias transcurridos entre las fechas
+      ///console.log('consumo = kw - consumoAnterior '+consumo);
       //ejemplo 10 dias de diferencias. = 9 
       consumo=consumo*30;// finalmente 9*30 seria el consumo a prediccion  
 
@@ -124,6 +115,20 @@ consumo=0;
   calculoRango(consumo);
   resultado();
 }
+
+function fdiasTranscurridos(){
+  var fechaAnterior = localStorage.getItem('fecha');
+  let d = new Date();
+  //fecha actual del sistema
+  let fechaActual =d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate() ; 
+   fecha1 = new Date(fechaActual);
+  fecha2 = new Date(fechaAnterior);     
+let diasTrnascurridos =    fecha1.getTime() -   fecha2.getTime(); 
+diasTrnascurridos= (diasTrnascurridos/(1000*60*60*24) ); 
+return diasTrnascurridos;
+}
+
+
 function calculoRango(consumoCalc) {
   //logica de rango de consumo. 
   try {
@@ -185,10 +190,13 @@ function resultado() {
       Cargo fijo: ${cargofijo} <br>      
       ${consumofinal1} x ${precioRango1} = ${rango1} <br>
       ${Math.round(consumofinal2,2)} x ${precioRango2} = ${rango2} <br>
-      ${consumofinal3} x ${precioRango3} = ${rango3} <br>
-      ${consumofinal4} x ${precioRango4} =${rango4}<br>  
-      <b>Promedio kh diario ${formatterDolar.format((consumo)/30)}</b>  
-      <hr>
+      ${Math.round(consumofinal3,2)} x ${precioRango3} = ${rango3} <br>
+      ${Math.round(consumofinal4,2)} x ${precioRango4} =${rango4}<br>  
+      <b> ${Math.round((consumo/30),2)} kwh en promedio diario.  </b>   
+   
+      <b> ${fdiasTranscurridos()* (consumo/30)} Kwh consumidos en </b> 
+      <b> ${fdiasTranscurridos()} días transcurridos</b>    <br>
+      <hr>  
       <b>Total a Pagar : ${formatterDolar.format(total)}</b>   
      
       </div>`;
