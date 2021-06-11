@@ -195,13 +195,10 @@ function resultado() {
       ${Math.round(consumofinal4,2)} x ${precioRango4} =RD$ ${rango4}<br>  
       <b>Total a Pagar : ${formatterDolar.format(total)}</b>   
       <hr>  
-      <b> ${Math.round((consumo/30),2)} kwh en promedio diario,  </b>   
-   
+      <b> ${ Number.parseFloat((consumo/30)).toFixed(2)} kwh en promedio diario,  </b>  
+      
       <b> ${fdiasTranscurridos()* (consumo/30)} Kwh en </b> 
-      <b> ${fdiasTranscurridos()} días transcurridos.</b>    <br>
-
-   
-     
+      <b> ${fdiasTranscurridos()} días transcurridos.</b>    <br>     
       </div>`;
   } catch (error) {
     alert("error en resultados: " + error);
