@@ -187,7 +187,7 @@ function resultado() {
     facturacion.innerHTML = '';
     facturacion.innerHTML += `<div>
       <b>Consumo estimado en 30 días:</b> ${Math.round(consumo, 2)} Kw mes <br>
-      <b>-------Escala de consumo-----</b>  <br>
+      <b>Escala estimada:</b>  <br>
       Cargo fijo:    RD$ ${cargofijo} <br>      
       ${consumofinal1} x ${precioRango1} = RD$ ${rango1} <br>
       ${Math.round(consumofinal2,2)} x ${precioRango2} = RD$ ${rango2} <br>
