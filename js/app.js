@@ -8,8 +8,8 @@ const configButton = document.getElementById('configButton');
 
 var diasFacturacion = 30;// los dias establecidos para la fkacturacion por la empresa 30 dias 
 var consumo = 0;
-var precioRango1 = 4.44; // hasta 200 kw
-var precioRango2 = 6.97;// de 201 a 300
+var precioRango1 = 4.71; // hasta 200 kw
+var precioRango2 = 7.16;// de 201 a 300
 var precioRango3 = 10.86; // de 301 a 700 
 var precioRango4 = 11.10;// de 700 en adelante. 
 
