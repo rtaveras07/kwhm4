@@ -229,7 +229,7 @@ function resultado() {
       <hr>  
       <b> ${ Number.parseFloat((consumo/30)).toFixed(2)} kwh en promedio diario,  </b>  
       
-      <b> ${fdiasTranscurridos()* (consumo/30)} Kwh en </b> 
+      <b>  ${Math.round(fdiasTranscurridos()* (consumo/30))} Kwh en </b> 
       <b> ${fdiasTranscurridos()} días transcurridos.</b>    <br>     
       </div>`;
   } catch (error) {
