@@ -26,7 +26,7 @@
                 <label for="mensual">Mensual</label>
                 <br>
                 <input type="radio" id="diferencia" name="tipoconsumo" value="diferencia">
-                <label for="diferencia">Lectura Actual (ver consumo anterior )</label>
+                <label for="diferencia">Lectura Actual</label>
                 <ul id=txtconsumoant></ul>
                 
             </div>
@@ -35,7 +35,7 @@
 
             <button id="add-item" class="btn btn-primary mb-2">Calcular</button>
 
-            <button type="button" class="btn btn-secondary mb-2" id=configurarD data-bs-toggle="modal" data-bs-target="#staticBackdrop">Consumo Anterior</button>
+            <button type="button" class="btn btn-secondary mb-2" id="configurarD" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Configurar Parametros</button>
 
             <div class="showCalc card p-2">
                 <ul id="descripcionConsumo">
@@ -51,17 +51,31 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Consumo Anterior</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Configuración</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <a>Consumo</a><br>
                         <input placeholder="Consumo Anterior en kwh ej. 200" type="text" id="kwh"> <br>
                         <a>Fecha ej. 2020/12/31</a><br>
-                        <input placeholder="fecha último consumo" id="fecha"> <!-- Aqui van los componentes para obtener la configuración -->
+                        <input placeholder="Fecha último consumo" id="fecha"> <!-- Aqui van los componentes para obtener la configuración -->
+                         <br>
+                         <br>
+                        <a><strong>Rango de Consumo </strong> </a><br>
+                        <a> Puede dejar en blanco los campos si no conoce de cambios realizados </a><br>
+                        <input placeholder="hasta 200 kw" type="text" id="rango1"> <br><br>
+                        <input placeholder="de 201 a 300" type="text" id="rango2"> <br><br>
+                        <input placeholder="de 301 a 700 " type="text" id="rango3"> <br><br>
+                        <input placeholder="de 700 en adelante. " type="text" id="rango4"> <br><br>
+                   
                     </div>
+
+                     
+                       
+
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button type="button" id="configButton" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
                     </div>
                 </div>

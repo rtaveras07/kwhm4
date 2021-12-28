@@ -8,10 +8,23 @@ const configButton = document.getElementById('configButton');
 
 var diasFacturacion = 30;// los dias establecidos para la fkacturacion por la empresa 30 dias 
 var consumo = 0;
-var precioRango1 = 4.71; // hasta 200 kw
+var precioRango1 = 4.44; // hasta 200 kw
 var precioRango2 = 7.16;// de 201 a 300
 var precioRango3 = 10.86; // de 301 a 700 
 var precioRango4 = 11.10;// de 700 en adelante. 
+
+if(localStorage.getItem('preciorango1')> 0) {
+  precioRango1 = localStorage.getItem('preciorango1'); 
+};
+if(localStorage.getItem('precioRango2')> 0) {
+  precioRango2 = localStorage.getItem('precioRango2'); 
+};
+if(localStorage.getItem('precioRango3')> 0) {
+  precioRango3 = localStorage.getItem('precioRango3'); 
+};
+if(localStorage.getItem('precioRango4')> 0) {
+  precioRango4 = localStorage.getItem('precioRango4'); 
+};
 
 var cargofijo2 = 137.25 // si su sonsumo es mayor o igual a 100 kw al mes. 
 var cargofijo1 = 37.95  // si su consumo es inferior a 100 kw 
@@ -21,16 +34,10 @@ var consumofinal2 = 0;
 var consumofinal3 = 0;
 var consumofinal4 = 0;
 var kw;// almacena el consumo introducido por el usuario. 
-
-
-
-
  //limpiar entrada de usuario tras clic en unno de los tipos de consumos. 
 const radio1=document.getElementById('diario').addEventListener('click', () => limpiaEntrada());
 const radio2=document.getElementById('mensual').addEventListener('click', () => limpiaEntrada());
 const radio3=document.getElementById('diferencia').addEventListener('click', () => limpiaEntrada());
-
-
 
 function config() {
 
@@ -41,6 +48,24 @@ function config() {
   var objeto_fecha = document.getElementById('fecha');
   objeto_kw.value = KW;
   objeto_fecha.value = FECHA;
+
+
+  let rango1 = localStorage.getItem('preciorango1');
+  console.log(rango1)
+  var obj_precioRango1 = document.getElementById('rango1');
+  obj_precioRango1.value = rango1;
+
+  let rango2 = localStorage.getItem('preciorango2');
+  var obj_precioRango2 = document.getElementById('rango2');
+  obj_precioRango2.value = rango2;
+
+  let rango3 = localStorage.getItem('preciorango3');
+  var obj_precioRango3 = document.getElementById('rango3');
+  obj_precioRango3.value = rango3;
+
+  let rango4 = localStorage.getItem('preciorango4');
+  var obj_precioRango4 = document.getElementById('rango4');
+  obj_precioRango4.value = rango4;
 
 
 }
@@ -54,7 +79,14 @@ function configConfirm() {
   let fanterior = document.getElementById('fecha').value; //valor entrada     
   let consAnterior = document.getElementById('kwh').value; //valor entrada  
   localStorage.setItem('kwh', consAnterior);
-  localStorage.setItem('fecha', fanterior);
+  localStorage.setItem('fecha', fanterior);  
+  
+  localStorage.setItem('preciorango1',   document.getElementById('rango1').value);  
+  localStorage.setItem('preciorango2',   document.getElementById('rango2').value);  
+  localStorage.setItem('preciorango3',   document.getElementById('rango3').value);  
+  localStorage.setItem('preciorango4',   document.getElementById('rango4').value);  
+
+
 
 }
 
