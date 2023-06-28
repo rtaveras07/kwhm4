@@ -8,23 +8,27 @@ const configButton = document.getElementById('configButton');
 
 var diasFacturacion = 30;// los dias establecidos para la fkacturacion por la empresa 30 dias 
 var consumo = 0;
-var precioRango1 = 4.44; // hasta 200 kw
-var precioRango2 = 7.16;// de 201 a 300
-var precioRango3 = 10.86; // de 301 a 700 
-var precioRango4 = 11.10;// de 700 en adelante. 
+var precioRango1 = localStorage.getItem('preciorango1');; // hasta 200 kw
+var precioRango2 = localStorage.getItem('preciorango2');;// de 201 a 300
+var precioRango3 = localStorage.getItem('preciorango3');; // de 301 a 700 
+var precioRango4 = localStorage.getItem('preciorango4');;// de 700 en adelante. 
+ localStorage.getItem('preciorango3');
+if (localStorage.getItem('precioRango1') !== null) {
+  precioRango1 = parseFloat(localStorage.getItem('precioRango1'));
+}
 
-if(localStorage.getItem('preciorango1')> 0) {
-  precioRango1 = localStorage.getItem('preciorango1'); 
-};
-if(localStorage.getItem('precioRango2')> 0) {
-  precioRango2 = localStorage.getItem('precioRango2'); 
-};
-if(localStorage.getItem('precioRango3')> 0) {
-  precioRango3 = localStorage.getItem('precioRango3'); 
-};
-if(localStorage.getItem('precioRango4')> 0) {
-  precioRango4 = localStorage.getItem('precioRango4'); 
-};
+if (localStorage.getItem('precioRango2') !== null) {
+  precioRango2 = parseFloat(localStorage.getItem('precioRango2'));
+}
+
+if (localStorage.getItem('precioRango3') !== null) {
+  precioRango3 = parseFloat(localStorage.getItem('precioRango3'));
+}
+
+if (localStorage.getItem('precioRango4') !== null) {
+  precioRango4 = parseFloat(localStorage.getItem('precioRango4'));
+}
+
 
 var cargofijo2 = 137.25 // si su sonsumo es mayor o igual a 100 kw al mes. 
 var cargofijo1 = 37.95  // si su consumo es inferior a 100 kw 
