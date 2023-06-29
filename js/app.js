@@ -8,10 +8,10 @@ const configButton = document.getElementById('configButton');
 
 var diasFacturacion = 30;// los dias establecidos para la fkacturacion por la empresa 30 dias 
 var consumo = 0;
-var precioRango1 = localStorage.getItem('preciorango1');; // hasta 200 kw
-var precioRango2 = localStorage.getItem('preciorango2');;// de 201 a 300
-var precioRango3 = localStorage.getItem('preciorango3');; // de 301 a 700 
-var precioRango4 = localStorage.getItem('preciorango4');;// de 700 en adelante. 
+var precioRango1 = 5.97; // hasta 200 kw
+var precioRango2 = 8.51;// de 201 a 300
+var precioRango3 = 13.83; // de 301 a 700 
+var precioRango4 = 13.83;// de 700 en adelante. 
  localStorage.getItem('preciorango3');
 if (localStorage.getItem('precioRango1') !== null) {
   precioRango1 = parseFloat(localStorage.getItem('precioRango1'));
