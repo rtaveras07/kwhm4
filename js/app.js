@@ -13,7 +13,7 @@ var precioRango2 = 8.51;// de 201 a 300
 var precioRango3 = 13.836; // de 301 a 700 
 var precioRango4 = 18.10;// de 700 en adelante. 
 
-var cargofijo2 = 137.25 // si su sonsumo es mayor o igual a 100 kw al mes. 
+var cargofijo2 = 126.81 // si su sonsumo es mayor o igual a 100 kw al mes. 
 var cargofijo1 = 37.95  // si su consumo es inferior a 100 kw 
 
 var consumofinal1 = 0; //variables para guardar el valor en consumo kwh segun el rango de consumo. 
